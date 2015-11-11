@@ -1,13 +1,7 @@
 require('../node_modules/openlayers/dist/ol.css');
 require('./index.css');
 var ol = require('openlayers');
-var send = require('./feedback_send');
 
-var url = 'http://student.ifip.tuwien.ac.at/geoserver/wfs';
-var layer = 'feedback';
-var prefix = 'ifip_2015';
-var featureNS = 'http://ifip/2015';
-var form = document.getElementById('feedback');
 
 var feedbackPoints = new ol.source.Vector({
   features: new ol.Collection(),
@@ -36,9 +30,6 @@ var map = new ol.Map({
   })
 });
 
-var feature = new ol.Feature();
-feature.setGeometryName('geom');
-feature.setGeometry(new ol.geom.Point(map.getView().getCenter()));
 feedbackPoints.addFeature(feature);
 var modify = new ol.interaction.Modify({
   features: feedbackPoints.getFeaturesCollection()
@@ -54,6 +45,18 @@ geolocation.once('change:position', function(evt) {
   map.getView().setCenter(geolocation.getPosition());
 });
 
+var url = 'http://student.ifip.tuwien.ac.at/geoserver/wfs';
+var layer = 'feedback';
+var prefix = 'g05_2015';
+var featureNS = 'http://g05/2015';
+var form = document.getElementById('feedback');
+
+
+var feature = new ol.Feature();
+feature.setGeometryName('geom');
+feature.setGeometry(new ol.geom.Point(map.getView().getCenter()));
+
+var send = require('./feedback_send');
 send(form, feature, url, {
   featureType: layer,
   featurePrefix: prefix,
