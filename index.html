@@ -10,6 +10,28 @@
 		<h2>Feedback</h2>
 		
 		<div id="map"></div>
+		<!-- <script type="text/javascript">
+		  var map = new ol.Map({
+			target: 'map',
+			layers: [
+			  new ol.layer.Tile({
+				source: new ol.source.MapQuest({layer: 'sat'})
+			  }),
+			  new ol.layer.Vector
+			  ({
+				source: new ol.source.Vector
+				({
+				format: new ol.format.GeoJSON(),
+				url: 'https://gist.githubusercontent.com/anonymous/5ca8269a7f7074c74e29/raw/07295f4901e9e301c264264cfff8b03e45624a3f/map.geojson'
+				})
+			  })
+			],
+			view: new ol.View({
+			  center: ol.proj.fromLonLat([37.41, 8.82]),
+			  zoom: 2
+			})
+		  });
+		</script> -->
 
 		<form id="feedback" method="POST" action="g05_block4/src/feedback_send.js"> 
 		  <input type="radio" name="geschlecht" value="Frau"/> Frau 
@@ -31,7 +53,7 @@
 		  <input type="reset" value="Zur&uuml;cksetzen"> <br /><br /> 
 		</form> 
 		
-		<script src="index.js" charset="utf-8"></script>	
+		<script src="g05_block4/src/index.js" charset="utf-8"></script>	
 </body>
 
 </html>
