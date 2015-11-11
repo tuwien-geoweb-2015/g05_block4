@@ -12,22 +12,8 @@
 		<h2>Feedback</h2>
 
 		<div id="map"></div>
-		<!--<script type="text/javascript">
-		  	var map = new ol.Map({
-				target: 'map',
-				layers: [
-					new ol.layer.Tile({
-					source: new ol.source.OSM({layer: 'hum'})
-					})
-				],
-				view: new ol.View({
-					center: ol.proj.fromLonLat([16.37, 48.209]),
-					zoom: 12
-					})
-			});
-		</script>-->
 
-		<form id="feedback" method="POST" action="feedback_send.js">
+		<form id="feedback" method="POST" action="feedback_send.php">
 		  <input type="radio" name="geschlecht" value="Frau"/> Frau
 		  <input type="radio" name="geschlecht" value="Herr"/> Herr<br />
 		  <table>
