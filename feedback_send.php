@@ -42,8 +42,7 @@
    
   include 'geoweb_db_close.php'; // Datenbank schließen 
 
-  header( "Location: http://student.ifip.tuwien.ac.at/geoweb/2015/g05/homepage/kontakt/danke/danke.htm")
-/*echo "Danke f&uuml;r das Feedback!<br />Die Daten wurden per Mail &uuml;bermittelt". 
+	echo "Danke f&uuml;r das Feedback!<br />Die Daten wurden per Mail &uuml;bermittelt". 
      " und in einer Datenbank gespeichert!"; 
        
 /* Alternativ: Aufruf einer Html-Seite für Danksagung */  
